@@ -91,6 +91,7 @@ def main_menu(current_user)
         puts "2. My appointments"
         puts "3. Change user"
         puts "4. Exit"
+        puts "5 Delete and leave"
 
         input = gets.chomp
     case input
@@ -105,7 +106,11 @@ def main_menu(current_user)
         main_menu(current_user)
     when "4"
         close_app
-
+    when "5"
+        # binding.pry
+        current_user.destroy
+        close_app
+        puts "Sorry you left"
     else
         puts "Please choose numbers 1 to 3"
         main_menu(current_user)
